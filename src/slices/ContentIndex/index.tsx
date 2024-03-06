@@ -19,9 +19,9 @@ const ContentIndex = async ({ slice }: ContentIndexProps): Promise<JSX.Element> 
   const blogPosts = await client.getAllByType("blog_post");
   const projects = await client.getAllByType("project");
 
-  const contentType = slice.primary.content_type || "Blog";
+  const contentType = slice.primary.content_type || "Content";
 
-  const items = contentType === "Blog" ? blogPosts : projects;
+  const items = contentType === "Content" ? blogPosts : projects;
 
   return (
     <Bounded

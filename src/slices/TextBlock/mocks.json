@@ -2,7 +2,19 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Anim pariatur culpa anim labore ex qui. Elit quis ipsum excepteur. Ex elit enim magna elit ipsum duis velit eu culpa proident."
+						}
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]

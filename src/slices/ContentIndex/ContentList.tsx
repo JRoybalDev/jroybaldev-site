@@ -22,9 +22,9 @@ export default function ContentList({ items, contentType, fallbackItemImage, vie
   const itemsRef = useRef<Array<HTMLLIElement> | null>([]);
   const [currentItem, setCurrentItem] = useState<null | number>(null);
 
-  const lastMousePos = useRef({x:0, y:0});
+  const lastMousePos = useRef({ x: 0, y: 0 });
 
-  const urlPrefix = contentType === "Blog" ? "/blog" : "/project";
+  const urlPrefix = contentType === "Content" ? "/content" : "/projects";
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -36,7 +36,7 @@ export default function ContentList({ items, contentType, fallbackItemImage, vie
           opacity: 1,
           y: 0,
           duration: 1.3,
-          ease:"elastic.out(1,0.3)",
+          ease: "elastic.out(1,0.3)",
           stagger: 0.2,
           scrollTrigger: {
             trigger: item,
@@ -52,11 +52,11 @@ export default function ContentList({ items, contentType, fallbackItemImage, vie
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const mousePos = {x: e.clientX, y:e.clientY + window.scrollY};
+      const mousePos = { x: e.clientX, y: e.clientY + window.scrollY };
       const speed = Math.sqrt(Math.pow(mousePos.x - lastMousePos.current.x, 2));
 
       let ctx = gsap.context(() => {
-        if(currentItem !== null) {
+        if (currentItem !== null) {
           const maxY = window.scrollY + window.innerHeight - 350;
           const maxX = window.innerWidth - 250;
 
@@ -97,7 +97,7 @@ export default function ContentList({ items, contentType, fallbackItemImage, vie
 
   useEffect(() => {
     contentImages.forEach((url) => {
-      if(!url) return;
+      if (!url) return;
       const img = new Image();
       img.src = url;
     })
@@ -119,7 +119,7 @@ export default function ContentList({ items, contentType, fallbackItemImage, vie
             {isFilled.keyText(item.data.title) && (
               <li
                 key={index}
-                className='list-item opacity-0f'
+                className='list-item opacity-0'
                 onMouseEnter={() => onMouseEnter(index)}
                 ref={(el) => (itemsRef.current[index] = el)}
               >
@@ -143,6 +143,7 @@ export default function ContentList({ items, contentType, fallbackItemImage, vie
         ))}
       </ul>
 
+
       {/* Hover Element */}
       <div
         className='hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300'
@@ -150,7 +151,7 @@ export default function ContentList({ items, contentType, fallbackItemImage, vie
           backgroundImage: currentItem !== null ? `url(${contentImages[currentItem]})` : "",
         }}
         ref={revealRef}
-        >
+      >
       </div>
     </div>
   )

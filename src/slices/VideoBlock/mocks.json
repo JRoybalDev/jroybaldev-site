@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"video_id": {
+				"__TYPE__": "FieldContent",
+				"value": "baseball",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
