@@ -1,4 +1,4 @@
-import { Content } from "@prismicio/client";
+import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import YoutubeIframe from "../../utils/YoutubeIframe";
 
@@ -11,9 +11,12 @@ export type VideoBlockProps = SliceComponentProps<Content.VideoBlockSlice>;
  * Component for "VideoBlock" Slices.
  */
 const VideoBlock = ({ slice }: VideoBlockProps): JSX.Element => {
+  // Use optional chaining to safely access the value property
+  const videoId = (slice.primary.video_id as KeyTextField);
+
   return (
     <div className="">
-      <YoutubeIframe videoId={slice.primary.video_id} />
+      {videoId && <YoutubeIframe videoId={videoId} />}
     </div>
   );
 };

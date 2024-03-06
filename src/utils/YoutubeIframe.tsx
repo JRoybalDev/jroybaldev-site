@@ -6,11 +6,10 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 interface IProps {
   videoId: string;
   autoPlay?: boolean;
-  title: string;
 }
 
 const VideoIframe: React.FC<IProps> = (props) => {
-  const { videoId, autoPlay, title } = props;
+  const { videoId, autoPlay } = props;
   const videoURL = `https://www.youtube.com/embed/${videoId}${
     autoPlay ? "?autoplay=1" : ""
   }`;
