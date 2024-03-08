@@ -481,13 +481,13 @@ interface SettingsDocumentData {
   /**
    * OG Image field in *Settings*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
    * - **API ID Path**: settings.og_image
    * - **Tab**: SEO and Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  og_image: prismic.KeyTextField;
+  og_image: prismic.ImageField<never>;
 }
 
 /**
