@@ -34,6 +34,23 @@
           "thumbnails": []
         }
       },
+      "live_link": {
+        "type": "Link",
+        "config": {
+          "label": "Live Link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "github_link": {
+        "type": "Link",
+        "config": {
+          "label": "GitHub Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
