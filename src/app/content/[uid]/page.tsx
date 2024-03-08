@@ -23,13 +23,13 @@ export default async function Page({ params }: { params: Params }) {
     <Bounded as={"article"}>
       <div className="rounded-2xl border-2 border-slate-800 bg-slate-900 px-4 py-10 md:px-8 md:py-20">
         <Heading as="h1">{page.data.title}</Heading>
-        <div className="flex gap-4 text-violet-400 text-xl font-bold">
+        <div className="flex md:gap-4 gap-2 text-violet-400 flex-wrap">
           {page.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
+            <span key={tag} className="md:text-xl text-sm font-bold">{tag}</span>
           ))}
         </div>
-        <p className="mt-8 border-b border-slate-600 text-xl font-medium text-slate-300">{formattedDate}</p>
-        <div className="mt-8 border-4 border-slate-300">
+        <p className="md:mt-8 mt-4 border-b border-slate-600 md:text-xl text-sm font-medium text-slate-300">{formattedDate}</p>
+        <div className="md:mt-8 mt-4 border-4 border-slate-300">
           <SliceZone slices={page.data.slices} components={components} />
         </div>
       </div>

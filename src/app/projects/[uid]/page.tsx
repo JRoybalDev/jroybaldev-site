@@ -22,19 +22,19 @@ export default async function Page({ params }: { params: Params }) {
     <Bounded as="article">
       <div className="rounded-2xl border-2 border-slate-800 bg-slate-900 px-4 py-10 md:px-8 md:py-20">
         <Heading as="h1">{page.data.title}</Heading>
-        <div className="flex gap-4 text-violet-400">
+        <div className="flex md:gap-4 gap-2 text-violet-400 flex-wrap">
           {page.tags.map((tag, index) => (
-            <span key={index} className="text-xl font-bold">
+            <span key={index} className="md:text-xl text-sm font-bold">
               {tag}
             </span>
           ))}
         </div>
         <div className="flex justify-between mt-8 border-b border-slate-600">
-          <p className="text-xl font-medium text-slate-300">
+          <p className="md:text-xl text-sm font-medium text-slate-300">
             {formattedDate}
           </p>
-          <div className="flex gap-2 text-slate-300">
-            <div className="flex items-center  hover:text-violet-300 hover:cursor-pointer">
+          <div className="flex gap-2 text-slate-300 text-sm md:text-base">
+            <div className="flex items-center hover:text-violet-300 hover:cursor-pointer">
               <PrismicLink field={page.data.github_link}>GitHub</PrismicLink>
               <MdArrowOutward/>
             </div>
