@@ -54,7 +54,7 @@ export default function NavBar({
                   )}
                   field={link}
                   onClick={() => setOpen(false)}
-                  target={label === "Resume" ? "_self" : "_blank"}
+                  target={label === "Resume" ? "_blank" : "_self"}
                   aria-current={
                     pathname.includes(asLink(link) as string)
                       ? "page"

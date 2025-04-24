@@ -1,0 +1,34 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"form_title": {
+				"__TYPE__": "FieldContent",
+				"value": "post",
+				"type": "Text"
+			},
+			"name_label": {
+				"__TYPE__": "FieldContent",
+				"value": "bowl",
+				"type": "Text"
+			},
+			"email_label": {
+				"__TYPE__": "FieldContent",
+				"value": "activity",
+				"type": "Text"
+			},
+			"message_label": {
+				"__TYPE__": "FieldContent",
+				"value": "drop",
+				"type": "Text"
+			},
+			"submit_button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "member",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
