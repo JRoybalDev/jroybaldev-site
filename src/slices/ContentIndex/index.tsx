@@ -20,7 +20,11 @@ const ContentIndex = async ({ slice }: ContentIndexProps): Promise<JSX.Element> 
 
   const contentType = slice.primary.content_type;
 
-  const items = projects;
+  const items = projects.sort((a, b) => {
+    const aDate = a.data.date ? new Date(a.data.date) : new Date(0);
+    const bDate = b.data.date ? new Date(b.data.date) : new Date(0);
+    return bDate.getTime() - aDate.getTime();
+  });
 
   return (
     <Bounded
@@ -32,11 +36,11 @@ const ContentIndex = async ({ slice }: ContentIndexProps): Promise<JSX.Element> 
       </Heading>
       {isFilled.richText(slice.primary.description) && (
         <div className="prose prose-xl prose-invert mb-10">
-          <PrismicRichText field={slice.primary.description}/>
+          <PrismicRichText field={slice.primary.description} />
         </div>
       )}
 
-      <ContentList items={items} contentType={contentType} viewMoreText={slice.primary.view_more_text} fallbackItemImage={slice.primary.fallback_item_image}/>
+      <ContentList items={items} contentType={contentType} viewMoreText={slice.primary.view_more_text} fallbackItemImage={slice.primary.fallback_item_image} />
     </Bounded>
   );
 };
