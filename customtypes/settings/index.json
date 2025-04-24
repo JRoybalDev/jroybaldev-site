@@ -69,11 +69,12 @@
           "select": null
         }
       },
-      "youtube_link": {
+      "resume_link": {
         "type": "Link",
         "config": {
-          "label": "YouTube Link",
+          "label": "Resume Link",
           "placeholder": "",
+          "allowTargetBlank": true,
           "select": null
         }
       }

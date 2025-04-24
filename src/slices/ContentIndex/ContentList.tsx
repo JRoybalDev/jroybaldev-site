@@ -10,7 +10,7 @@ import { Content } from "@prismicio/client";
 gsap.registerPlugin(ScrollTrigger);
 
 type ContentListProps = {
-  items: Content.BlogPostDocument[] | Content.ProjectDocument[];
+  items: Content.ProjectDocument[];
   contentType: Content.ContentIndexSlice["primary"]["content_type"];
   fallbackItemImage: Content.ContentIndexSlice["primary"]["fallback_item_image"];
   viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
@@ -30,7 +30,7 @@ export default function ContentList({
   const [hovering, setHovering] = useState(false);
   const lastMousePos = useRef({ x: 0, y: 0 });
 
-  const urlPrefix = contentType === "Content" ? "/content" : "/projects";
+  const urlPrefix = contentType === "Project" && "/projects";
 
   useEffect(() => {
     // Animate list-items in with a stagger
@@ -117,8 +117,8 @@ export default function ContentList({
       : fallbackItemImage;
     return asImageSrc(image, {
       fit: "crop",
-      w: 220,
-      h: 320,
+      w: 200,
+      h: 200,
       exp: -10,
     });
   });
@@ -170,7 +170,7 @@ export default function ContentList({
 
       {/* Hover element */}
       <div
-        className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
+        className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[200px] w-[200px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
         style={{
           backgroundImage:
             currentItem !== null ? `url(${contentImages[currentItem]})` : "",

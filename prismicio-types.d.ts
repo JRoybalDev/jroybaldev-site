@@ -4,104 +4,6 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogPostDocumentDataSlicesSlice = VideoBlockSlice;
-
-/**
- * Content for Content Post documents
- */
-interface BlogPostDocumentData {
-  /**
-   * Title field in *Content Post*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Date field in *Content Post*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.date
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#date
-   */
-  date: prismic.DateField;
-
-  /**
-   * Hover Image field in *Content Post*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.hover_image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hover_image: prismic.ImageField<never>;
-
-  /**
-   * Slice Zone field in *Content Post*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice> /**
-   * Meta Title field in *Content Post*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: blog_post.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Content Post*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: blog_post.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Content Post*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-}
-
-/**
- * Content Post document from Prismic
- *
- * - **API ID**: `blog_post`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type BlogPostDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<BlogPostDocumentData>,
-    "blog_post",
-    Lang
-  >;
-
 type HomepageDocumentDataSlicesSlice = HeroSlice;
 
 /**
@@ -448,15 +350,15 @@ interface SettingsDocumentData {
   github_link: prismic.LinkField;
 
   /**
-   * YouTube Link field in *Settings*
+   * Resume Link field in *Settings*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: settings.youtube_link
+   * - **API ID Path**: settings.resume_link
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  youtube_link: prismic.LinkField /**
+  resume_link: prismic.LinkField /**
    * Meta Title field in *Settings*
    *
    * - **Field Type**: Text
@@ -507,7 +409,6 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
-  | BlogPostDocument
   | HomepageDocument
   | PageDocument
   | ProjectDocument
@@ -620,7 +521,7 @@ export interface ContentIndexSliceDefaultPrimary {
    * - **API ID Path**: content_index.primary.content_type
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  content_type: prismic.SelectField<"Content" | "Project">;
+  content_type: prismic.SelectField<"Project" | "Blog">;
 
   /**
    * Description field in *ContentIndex → Primary*
@@ -1050,9 +951,6 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      BlogPostDocument,
-      BlogPostDocumentData,
-      BlogPostDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,

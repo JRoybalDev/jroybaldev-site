@@ -5,7 +5,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "@/components/Bounded";
 import { isFilled } from "@prismicio/client";
-import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa6";
+import { FaBook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa6";
 
 export default async function Footer() {
   const client = createClient();
@@ -75,13 +75,13 @@ export default async function Footer() {
               <FaLinkedin />
             </PrismicNextLink>
           )}
-          {isFilled.link(settings.data.youtube_link) && (
+          {isFilled.link(settings.data.resume_link) && (
             <PrismicNextLink
-              field={settings.data.youtube_link}
+              field={settings.data.resume_link}
               className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-violet-400"
-              aria-label={settings.data.name + " on YouTube"}
+              aria-label={settings.data.name + ""}
             >
-              <FaYoutube />
+              <FaBook />
             </PrismicNextLink>
           )}
         </div>

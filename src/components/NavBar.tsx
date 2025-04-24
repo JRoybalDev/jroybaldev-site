@@ -54,6 +54,7 @@ export default function NavBar({
                   )}
                   field={link}
                   onClick={() => setOpen(false)}
+                  target={label === "Resume" ? "_self" : "_blank"}
                   aria-current={
                     pathname.includes(asLink(link) as string)
                       ? "page"
@@ -124,6 +125,7 @@ function DesktopMenu({
                 "group relative block overflow-hidden rounded px-3 py-1 text-base font-bold text-slate-900",
               )}
               field={link}
+              target={label === "Resume" ? "_blank" : "_self"}
               aria-current={
                 pathname.includes(asLink(link) as string) ? "page" : undefined
               }
