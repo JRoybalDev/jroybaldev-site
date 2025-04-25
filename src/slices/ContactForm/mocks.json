@@ -27,6 +27,16 @@
 				"__TYPE__": "FieldContent",
 				"value": "member",
 				"type": "Text"
+			},
+			"form_action": {
+				"__TYPE__": "FieldContent",
+				"value": "plan",
+				"type": "Text"
+			},
+			"subject_label": {
+				"__TYPE__": "FieldContent",
+				"value": "stood",
+				"type": "Text"
 			}
 		},
 		"items": []

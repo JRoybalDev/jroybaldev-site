@@ -515,6 +515,16 @@ export interface ContactFormSliceDefaultPrimary {
   form_title: prismic.KeyTextField;
 
   /**
+   * form_action field in *ContactForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.primary.form_action
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  form_action: prismic.KeyTextField;
+
+  /**
    * Name Label field in *ContactForm → Primary*
    *
    * - **Field Type**: Text
@@ -553,6 +563,16 @@ export interface ContactFormSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   submit_button_label: prismic.KeyTextField;
+
+  /**
+   * Subject Label field in *ContactForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.primary.subject_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subject_label: prismic.KeyTextField;
 }
 
 /**
