@@ -87,6 +87,8 @@ export default function NavBar({
               linkField={settings.data.cta_link}
               label={settings.data.cta_label}
               className="ml-3"
+              setOpen={setOpen}
+              open={open}
             />
           </li>
         </div>
