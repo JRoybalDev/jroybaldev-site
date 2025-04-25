@@ -21,7 +21,7 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <Bounded as="article">
       <div className="rounded-2xl border-2 border-slate-800 bg-slate-900 px-4 py-10 md:px-8 md:py-20">
-        <Heading as="h1">{page.data.title}</Heading>
+        <Heading as="h1" className="w-full text-wrap">{page.data.title}</Heading>
         <div className="flex md:gap-4 gap-2 text-violet-400 flex-wrap">
           {page.tags.map((tag, index) => (
             <span key={index} className="md:text-xl text-sm font-bold">
