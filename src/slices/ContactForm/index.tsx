@@ -16,6 +16,7 @@ export type ContactFormProps = SliceComponentProps<Content.ContactFormSlice>;
 /**
  * Component for "ContactForm" Slices.
  */
+
 const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
